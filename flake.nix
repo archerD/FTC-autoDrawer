@@ -10,18 +10,11 @@
             name = "FTC AutoDrawer";
             pname = "ftc-autodrawer";
 
-            src = pkgs.fetchFromGitHub {
-                    owner = "archerd";
-                    repo = "FTC-autoDrawer";
-                    rev = "master";
-                    sha256 = "I+2JLJXmYN28gTpqvqEKcqFD8Zh2ZP9xkUSXHOSoF4s=";
-                };
-
+            src = pkgs.lib.cleanSource ./AnimationTest;
             buildInputs = [ pkgs.jdk ];
             nativeBuildInputs = [ pkgs.ant pkgs.makeWrapper ];
 
             buildPhase = ''
-                cd AnimationTest
                 ant default
             '';
             
@@ -29,10 +22,10 @@
                 mkdir $out
                 mkdir $out/bin
                 mkdir $out/lib
-                cp -dp dist/AnimationTest.jar $out/lib/
+                cp -dpR dist/ $out/
                 # makeWrapper args feel backwards: first is the executable to be wrapped, then the location to write the wrapper, lastly the arguments for the original executable.
                 makeWrapper ${pkgs.jdk}/bin/java $out/bin/${pname} \
-                        --add-flags -jar --add-flags $out/lib/AnimationTest.jar
+                        --add-flags -jar --add-flags $out/dist/AnimationTest.jar
             '';
         };
 
