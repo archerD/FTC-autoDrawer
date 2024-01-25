@@ -20,8 +20,8 @@ public class FTCauto extends JFrame {
         static final int FIELD_X_OFFSET = 0;
         static final int FIELD_Y_OFFSET = 0;
         //Picture stuff  !!You have to use png so you can have transparency
-        private static final Image field = new ImageIcon("Images/Field.png").getImage();
-        private static final Image autoDrawer = new ImageIcon("Images/autoDrawer.png").getImage();
+        private static final Image field = new ImageIcon(ClassLoader.getSystemResource("Field.png")).getImage();
+        private static final Image autoDrawer = new ImageIcon(ClassLoader.getSystemResource("autoDrawer.png")).getImage();
         private static final double FIELD_HEIGHT_IN_INCHES = 144;
         final Color background = new Color(200, 200, 200);
         final Color sidePanelDark = new Color(0, 0, 0, 50);

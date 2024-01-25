@@ -19,9 +19,9 @@ class MenuBars {
 
     public static JMenuBar menuBar = new JMenuBar();
     public static JMenu tool = new JMenu("Tool Type");
-    public static JMenuItem toolAdd = new JMenuItem("Add", new ImageIcon("Images/Waypoint.png"));
-    public static JMenuItem toolDelete = new JMenuItem("Delete", new ImageIcon("Images/Delete.png"));
-    public static JMenuItem toolEdit = new JMenuItem("Edit", new ImageIcon("Images/Edit.png"));
+    public static JMenuItem toolAdd = new JMenuItem("Add", new ImageIcon(ClassLoader.getSystemResource("Waypoint.png")));
+    public static JMenuItem toolDelete = new JMenuItem("Delete", new ImageIcon(ClassLoader.getSystemResource("Delete.png")));
+    public static JMenuItem toolEdit = new JMenuItem("Edit", new ImageIcon(ClassLoader.getSystemResource("Edit.png")));
 
     public static JMenu file = new JMenu("File");
     public static JMenuItem newFile = new JMenuItem("New File", KeyEvent.VK_S);
@@ -47,7 +47,7 @@ class MenuBars {
     //testing methods, will be added to menu if
     //developing in MainFrame is true
     public static JMenu testing = new JMenu("Testing Methods");
-    public static JMenuItem testingGetDistance = new JMenuItem("Get Distance", new ImageIcon("Images/Ruler.jpg"));
+    public static JMenuItem testingGetDistance = new JMenuItem("Get Distance", new ImageIcon(ClassLoader.getSystemResource("Ruler.jpg")));
 
     public static JMenuBar menuBars(boolean developing) {
 

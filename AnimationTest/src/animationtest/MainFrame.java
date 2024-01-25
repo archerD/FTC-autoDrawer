@@ -6,7 +6,7 @@ import java.io.File;
 
 class MainFrame extends JFrame {
 
-    private static final Image icon = new ImageIcon("Images/icon.png").getImage();
+    private static final Image icon = new ImageIcon(ClassLoader.getSystemResource("Icon.png")).getImage();
     static FTCauto.MainGraphicsPanel auto;
     static InfoBar.MainGraphicsPanel infoBar;
     static ProgramInfo info = null;
